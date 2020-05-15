@@ -1,4 +1,3 @@
-#Функция извлекает содержимое из файла и помещает его в массив
 def txt_read1():
     encrypt = ''
     with open(filename1, 'r', encoding='utf-8') as f:
@@ -20,7 +19,7 @@ def encryption(encrypt, key):
 def text_write(encrypted):
 	with open(filename2, 'w', encoding='utf-8') as f:
 		f.write(encrypted)
-#почему оно выводит мне r ?
+
 def txt_read2():
 	encrypt = ''
 	with open(filename2, 'r', encoding='utf-8') as f:
@@ -33,7 +32,7 @@ def decryption(encrypt, key):
 	for letter in encrypt.lower():
 		if letter in alphabet:
 			position = alphabet.index(letter)
-			newPosition = (position - key) #% len(alphabet)
+			newPosition = (position - key) % len(alphabet)
 			encryptedd += alphabet[newPosition]
 		else:
 			encryptedd += letter
